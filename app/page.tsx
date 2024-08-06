@@ -1,113 +1,284 @@
-import Image from "next/image";
+
+// export default function HomePage() {
+//   return (
+//     <div>
+//       <h1>Home</h1>
+//       <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at lacus vel felis volutpat cursus ac vel libero. Vivamus efficitur massa non purus cursus, non dictum arcu consequat.</p>
+//     </div>
+//   );
+// }
+import React from 'react';
+import Link from 'next/link';
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      {/* Masthead */}
+      <header className="masthead">
+        <div className="container">
+          <div className="masthead-subheading">Welcome To Our Studio!</div>
+          <div className="masthead-heading text-uppercase">It's Nice To Meet You</div>
+          <Link className="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</Link>
         </div>
-      </div>
+      </header>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      {/* Services Section */}
+      <section className="page-section" id="services">
+        <div className="container">
+          <div className="text-center">
+            <h2 className="section-heading text-uppercase">Services</h2>
+            <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          </div>
+          <div className="row text-center">
+            <div className="col-md-4">
+              <span className="fa-stack fa-4x">
+              <FontAwesomeIcon icon={faCircle} className="fa-stack-2x text-primary" />
+              <FontAwesomeIcon icon={faShoppingCart} className="fa-stack-1x fa-inverse" />
+                {/* <i className="fas fa-circle fa-stack-2x text-primary"></i>
+                <i className="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> */}
+              </span>
+              <h4 className="my-3">Shop Current Products</h4>
+              <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            </div>
+            {/* <div className="col-md-4">
+              <div className="fa-stack fa-4x">
+              <FontAwesomeIcon icon={faCircle} className="fa-stack-2x text-primary" />
+               <FontAwesomeIcon icon={faPencilAlt} className="fa-stack-1x fa-inverse" />
+              </div> */}
+            <div className="col-md-4">
+              <span className="fa-stack fa-4x">
+                <i className="fas fa-circle fa-stack-2x text-primary"></i>
+                <i className="fas fa-pencil fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 className="my-3">Custom Designs</h4>
+              <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            </div>
+            <div className="col-md-4">
+              <span className="fa-stack fa-4x">
+                <i className="fas fa-circle fa-stack-2x text-primary"></i>
+                <i className="fas fa-hammer fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 className="my-3">Restoration and Repair</h4>
+              <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      {/* Portfolio Section */}
+      <section className="page-section bg-light" id="portfolio">
+        <div className="container">
+          <div className="text-center">
+            <h2 className="section-heading text-uppercase">Portfolio</h2>
+            <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          </div>
+          <div className="row">
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="portfolio-item">
+                <Link className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
+                  </div>
+                  <img className="img-fluid" src="/assets/img/portfolio/1.jpg" alt="..." />
+                </Link>
+                <div className="portfolio-caption">
+                  <div className="portfolio-caption-heading">Precision</div>
+                  <div className="portfolio-caption-subheading text-muted">Meticulous Detailing</div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="portfolio-item">
+                <Link className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
+                  </div>
+                  <img className="img-fluid" src="/assets/img/portfolio/2.jpg" alt="..." />
+                </Link>
+                <div className="portfolio-caption">
+                  <div className="portfolio-caption-heading">Handcrafted Quality</div>
+                  <div className="portfolio-caption-subheading text-muted">Superior Craftsmanship</div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="portfolio-item">
+                <Link className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x"></i></div>
+                  </div>
+                  <img className="img-fluid" src="/assets/img/portfolio/3.jpg" alt="..." />
+                </Link>
+                <div className="portfolio-caption">
+                  <div className="portfolio-caption-heading">Custom Designs</div>
+                  <div className="portfolio-caption-subheading text-muted">With you in mind</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      {/* About Section */}
+      <section className="page-section" id="about">
+        <div className="container">
+          <div className="text-center">
+            <h2 className="section-heading text-uppercase">About</h2>
+            <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          </div>
+          <ul className="timeline">
+            <li>
+              <div className="timeline-image"><img className="rounded-circle img-fluid" src="/assets/img/about/1.jpg" alt="..." /></div>
+              <div className="timeline-panel">
+                <div className="timeline-heading">
+                  <h4>2009-2011</h4>
+                  <h4 className="subheading">TELL YOUR STORY</h4>
+                </div>
+                <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+              </div>
+            </li>
+            <li className="timeline-inverted">
+              <div className="timeline-image"><img className="rounded-circle img-fluid" src="/assets/img/about/2.jpg" alt="..." /></div>
+              <div className="timeline-panel">
+                <div className="timeline-heading">
+                  <h4>March 2011</h4>
+                  <h4 className="subheading">An Agency is Born</h4>
+                </div>
+                <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+              </div>
+            </li>
+            <li>
+              <div className="timeline-image"><img className="rounded-circle img-fluid" src="/assets/img/about/3.jpg" alt="..." /></div>
+              <div className="timeline-panel">
+                <div className="timeline-heading">
+                  <h4>December 2015</h4>
+                  <h4 className="subheading">Transition to Full Service</h4>
+                </div>
+                <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+              </div>
+            </li>
+            <li className="timeline-inverted">
+              <div className="timeline-image"><img className="rounded-circle img-fluid" src="/assets/img/about/4.jpg" alt="..." /></div>
+              <div className="timeline-panel">
+                <div className="timeline-heading">
+                  <h4>July 2020</h4>
+                  <h4 className="subheading">Phase Two Expansion</h4>
+                </div>
+                <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+              </div>
+            </li>
+            <li className="timeline-inverted">
+              <div className="timeline-image">
+                <h4>
+                  Be Part
+                  <br />
+                  Of Our
+                  <br />
+                  Story!
+                </h4>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      {/* Team Section */}
+      <section className="page-section bg-light" id="team">
+        <div className="container">
+          <div className="text-center">
+            <h2 className="section-heading text-uppercase">Our Amazing Team</h2>
+            <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          </div>
+          <div className="row">
+            <div className="col-lg-6">
+              <div className="team-member">
+                <img className="mx-auto rounded-circle" src="/assets/img/team/1.jpg" alt="..." />
+                <h4>Jason Waynick</h4>
+                <p className="text-muted">Owner, Lead Designer</p>
+        
+                <Link className="btn btn-dark btn-social mx-2" href="https://www.instagram.com/jasonwaynick/?hl=en" aria-label="jason instagram"> <FaInstagram /></Link>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+                <Link className="btn btn-dark btn-social mx-2" href="https://www.instagram.com/jasonwaynick/?hl=en" aria-label="jason instagram"> <FaFacebookF /></Link>
+                {/* <Link className="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i className="fab fa-linkedin-in"></i></Link> */}
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="team-member">
+                <img className="mx-auto rounded-circle" src="/assets/img/team/2.jpg" alt="..." />
+                <h4>Anders Waynick</h4>
+                <p className="text-muted">Lead Assistant</p>
+                <Link className="btn btn-dark btn-social mx-2" href="https://www.instagram.com/jasonwaynick/?hl=en" aria-label="jason instagram"> <FaInstagram /></Link>
+                
+                <Link className="btn btn-dark btn-social mx-2" href="https://www.instagram.com/jasonwaynick/?hl=en" aria-label="jason instagram"> <FaFacebookF /></Link>
+
+                {/* <Link className="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i className="fab fa-linkedin-in"></i></Link> */}
+              </div>
+            </div>
+            {/* <div className="col-lg-4">
+              <div className="team-member">
+                <img className="mx-auto rounded-circle" src="/assets/img/team/3.jpg" alt="..." />
+                <h4>Larry Parker</h4>
+                <p className="text-muted">Lead Developer</p>
+                <Link className="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i className="fab fa-twitter"></i></Link>
+                <Link className="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i className="fab fa-facebook-f"></i></Link>
+                <Link className="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i className="fab fa-linkedin-in"></i></Link>
+              </div> */}
+            {/* </div> */}
+          </div>
+          <div className="row">
+            <div className="col-lg-8 mx-auto text-center"><p className="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="page-section" id="contact">
+        <div className="container">
+          <div className="text-center">
+            <h2 className="section-heading text-uppercase">Contact Us</h2>
+            <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          </div>
+          <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+            <div className="row align-items-stretch mb-5">
+              <div className="col-md-6">
+                <div className="form-group">
+                  <input className="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
+                  <div className="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                </div>
+                <div className="form-group">
+                  <input className="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
+                  <div className="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                  <div className="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                </div>
+                <div className="form-group mb-md-0">
+                  <input className="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
+                  <div className="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className="form-group form-group-textarea mb-md-0">
+                  <textarea className="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
+                  <div className="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                </div>
+              </div>
+            </div>
+            <div className="d-none" id="submitSuccessMessage">
+              <div className="text-center text-white mb-3">
+                <div className="fw-bolder">Form submission successful!</div>
+                To activate this form, sign up at
+                <br />
+                <Link href="https://startbootstrap.com/solution/contact-forms"></Link>
+              </div>
+            </div>
+            <div className="d-none" id="submitErrorMessage"><div className="text-center text-danger mb-3">Error sending message!</div></div>
+            <div className="text-center"><button className="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
+          </form>
+        </div>
+      </section>
+    </>
   );
 }
