@@ -2,6 +2,7 @@
 import { ReactNode, useEffect } from 'react';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
+import ClientScriptLoader from './Components/ClientScriptLoader';
 import './styles.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -37,13 +38,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
           type="text/css"
         />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
       </head>
       <body className={inter.className}>
         <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
           <div className="container">
             <a className="navbar-brand" href="/">
-              LOGO/TAGLINE HERE
+              Forge & Flow
               {/* <img src="/assets/img/navbar-logo.svg" alt="Logo" /> */}
             </a>
             <button
@@ -86,6 +89,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </div>
           </div>
         </footer>
+        <ClientScriptLoader />
       </body>
     </html>
   );
