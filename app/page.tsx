@@ -14,7 +14,8 @@ export default function Home() {
       <header className="masthead">
         <div className="container">
           <div className="masthead-subheading">Welcome To Our Studio!</div>
-          <div className="masthead-heading text-uppercase">It's Nice To Meet You</div>
+          <div className="masthead-heading text-uppercase">It&apos;s Nice To Meet You</div>
+
           <Link className="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</Link>
         </div>
       </header>
