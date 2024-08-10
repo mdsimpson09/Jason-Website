@@ -57,8 +57,6 @@
 //   throw new Error('Function not implemented.');
 // }
 
-
-
 import { useEffect } from 'react';
 
 const ClientScriptLoader: React.FC = () => {
@@ -88,20 +86,22 @@ const ClientScriptLoader: React.FC = () => {
         }
       };
 
-      // Wait for Bootstrap to be available
       if ((window as any).bootstrap && (window as any).bootstrap.ScrollSpy) {
         initializeScrollSpy();
       } else {
-        // Listen for the Bootstrap load event
         window.addEventListener('load', initializeScrollSpy);
       }
 
-      const navbarToggler = document.body.querySelector<HTMLButtonElement>('.navbar-toggler');
-      const responsiveNavItems = Array.from(document.querySelectorAll<HTMLAnchorElement>('#navbarResponsive .nav-link'));
-      responsiveNavItems.forEach((responsiveNavItem) => {
-        responsiveNavItem.addEventListener('click', () => {
-          if (window.getComputedStyle(navbarToggler!).display !== 'none') {
-            navbarToggler!.click();
+      // Handle the click event on responsive nav links
+      const navbarToggler = document.querySelector('.navbar-toggler');
+      const responsiveNavItems = document.querySelectorAll('#navbarResponsive .nav-link');
+
+      responsiveNavItems.forEach((navItem) => {
+        navItem.addEventListener('click', () => {
+          const navbarCollapse = document.querySelector('.navbar-collapse');
+          if (navbarCollapse && window.getComputedStyle(navbarToggler!).display !== 'none') {
+            // Collapse the navbar using Bootstrap's collapse method
+            (window as any).bootstrap.Collapse.getInstance(navbarCollapse)?.toggle();
           }
         });
       });
@@ -119,7 +119,7 @@ const ClientScriptLoader: React.FC = () => {
 };
 
 export default ClientScriptLoader;
+
 function navbarShrink(this: Document, ev: Event) {
   throw new Error('Function not implemented.');
 }
-
