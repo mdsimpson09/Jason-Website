@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
           type="text/css"
         />
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
       </head>
@@ -90,6 +90,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
         </footer>
         <ClientScriptLoader />
+        {/* Load scripts asynchronously */}
+        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" strategy="afterInteractive" />
+        <Script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" strategy="afterInteractive" />
       </body>
     </html>
   );
